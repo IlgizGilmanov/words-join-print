@@ -1,10 +1,16 @@
 {
   "name": "words-join-print",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint:js": "eslint",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint": "pnpm lint:js & pnpm lint:css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
   },
@@ -14,10 +20,19 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@eslint/compat": "^1.0.1",
     "@eslint/js": "^9.3.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "eslint": "9.x",
+    "eslint-config-next": "^14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.3.0",
@@ -26,6 +41,7 @@
     "prettier": "3.2.5",
     "stylelint": "^16.6.0",
     "stylelint-config-standard": "^36.0.0",
+    "typescript": "^5.4.5",
     "typescript-eslint": "^7.10.0"
   },
   "lint-staged": {
