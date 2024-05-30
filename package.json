@@ -12,6 +12,7 @@
     "lint:css": "stylelint \"**/*.css\"",
     "lint": "pnpm lint:js & pnpm lint:css",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "scan": "pnpm lint && pnpm test",
     "prepare": "husky"
   },
   "engines": {

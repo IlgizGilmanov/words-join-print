@@ -4,12 +4,34 @@ import tseslint from 'typescript-eslint';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 import { fixupConfigRules } from '@eslint/compat';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals.js';
 
 export default [
   {
+    ignores: [
+      'node_modules/',
+      '.next/',
+      'out/',
+      'coverage/',
+      'public/',
+      'dist/',
+      '*.log',
+      '*.config.js',
+      '*.config.mjs',
+      '.env',
+      '.env.local',
+      '.env.*.local',
+    ],
+  },
+  {
     languageOptions: {
-      ...globals.browser,
+      globals: {
+        ...globals.browser,
+        React: 'writable', // добавьте React в глобальные переменные
+        document: 'readonly',
+        window: 'readonly',
+        console: 'readonly',
+      },
       ...nextCoreWebVitals.languageOptions?.globals, // Add globals from next/core-web-vitals
     },
     settings: {
